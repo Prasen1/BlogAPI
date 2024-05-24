@@ -30,8 +30,8 @@ func (s *InMemoryStorage) CreatePost(post *pb.Post) error {
 }
 
 func (s *InMemoryStorage) ReadPost(postID string) (*pb.Post, error) {
-	s.mu.Lock()
-	defer s.mu.Unlock()
+	//s.mu.Lock()
+	//defer s.mu.Unlock()
 	post, exists := s.posts[postID]
 	if !exists {
 		return nil, errors.New("post not found")
